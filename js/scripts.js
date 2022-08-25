@@ -26,8 +26,8 @@ const pokemonList = [
 ];
 
 for (let i = 0; i < pokemonList.length; i++) {
-    document.write(pokemonList[i].name +  pokemonList[i].height);
-    if (pokemonList[i].height <4){
-        document.write(pokemonList[i] + '- Wow, that\'s huge!')
-    }
+    document.write(pokemonList[i].name + ' ' + 'height:' +  ' ' + pokemonList[i].height)
+    if (pokemonList[i].height >3){
+        document.write(' ' + '- Wow, that\'s huge!' + '<br/>');
+    } else document.write('<br/>');
 }
