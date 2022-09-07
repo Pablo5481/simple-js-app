@@ -28,3 +28,7 @@
   h1 {
     color: darkblue;
   }
+
+  ul{
+    list-style-type:none;
+  }
