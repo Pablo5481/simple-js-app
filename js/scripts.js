@@ -47,6 +47,7 @@ const pokemonRepository = (function() {
         // Now we add the details to the item
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
+        item.weight = details.weight;
         item.types = details.types;
       }).catch(function (e) {
         console.error(e);
@@ -58,7 +59,7 @@ const pokemonRepository = (function() {
     
   let modalContainer = document.querySelector('#modal-container');
     
-   function showModal(title, text, img) {
+   function showModal(pokemon) {
       modalContainer.innerHTML='';
       
       const modal = document.createElement('div');
@@ -69,24 +70,26 @@ const pokemonRepository = (function() {
   
       const closeButtonElement = document.createElement('button');
       closeButtonElement.classList.add('modal-close');
-      closeButtonElement.innerText = 'Close';
+      closeButtonElement.innerText = 'x';
       closeButtonElement.addEventListener('click', hideModal);
-        
-      const pokemonImgElement = document.createElement('img');
-      pokemonImgElement.classList.add('pokemon-img');
-      pokemonImgElement.alt = 'Image of Pokemon Selected';
-      pokemonImgElement.src = pokemon.imageUrl || 'img/pokemon.png';
   
+      const title = document.createElement('h1');
+          title.innerText = pokemon.name;
+     
       const pokemonHeight = document.createElement('p')
-      pokemonHeight.innerText = `Height: ${pokemon.height || '?'}`;
+      pokemonHeight.innerText = 'Height: ' + pokemon.height;
   
-      const pokemonWeight=document.createElement('p')
-      pokemonWeight.innerText = `Weight: ${pokemon.weight || '?'}`;
+      const pokemonWeight = document.createElement('p')
+      pokemonWeight.innerText = 'Weight: ' + pokemon.weight;
+  
+      const pokemonImage = document.createElement('img')
+      pokemonImage.src = pokemon.imageUrl;
       
       modal.appendChild(closeButtonElement);
-      modal.appendChild(pokemonImgElement);
+      modal.appendChild(title);
       modal.appendChild(pokemonHeight);
       modal.appendChild(pokemonWeight);
+      modal.appendChild(pokemonImage);
       modalContainer.appendChild(modal);
   
       modalContainer.classList.add('is-visible');
@@ -112,7 +115,7 @@ const pokemonRepository = (function() {
       
   function showDetails(pokemon){
       loadDetails(pokemon).then(function () {
-      showModal(pokemon.Height, pokemon.Weight, pokemonImgElement)
+      showModal(pokemon);
     });
     }
   
