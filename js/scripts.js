@@ -103,7 +103,7 @@ const pokemonRepository = (function() {
         } 
       });
   
-    modelContainer.addEventListener('click', (e) => {
+    modalContainer.addEventListener('click', (e) => {
       const target = e.target;
       if (target === modalContainer){
         hideModal();
