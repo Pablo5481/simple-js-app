@@ -9,9 +9,8 @@ https://pokeapi.co/api/v2/pokemon
 
 Users can interact with the application in the following ways:
 
-1. Can see details about a specific pokémon by clicking anywhere on a pokémon card or the "See Profile" button.
-2. can perform searches for a specific pokémon using the search bar on the top right.
-3. can clear their searches by clicking the "Clear" button.
+1. Can see details about a specific pokémon by clicking anywhere on a pokémon card.
+
 
 Technical Dependencies:
 
