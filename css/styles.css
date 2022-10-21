@@ -1,52 +1,52 @@
+.modal-title, .modal-body {
+  text-transform: capitalize;
+  text-align: center;
+  align-items: center;
+  font-size: 110%;
+}
+
 
 
 .button {
-  align-items: center;
-  appearance: button;
-  background-color: #0276FF;
-  border: none;
-  width: 85%;
-  border-radius: 8px;
-  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  font-family: "RM Neue",sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 10px 4px;
-  padding: 10px 21px;
-  text-align: center;
-  text-transform: capitalize;
-  transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
-  touch-action: manipulation;
-  justify-content: space-between;
+align-items: center;
+appearance: button;
+background-color: #0276FF;
+border: none;
+width: 85%;
+border-radius: 8px;
+box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+color: #fff;
+cursor: pointer;
+display: flex;
+flex-direction: column;
+font-family: "RM Neue",sans-serif;
+font-size: 100%;
+line-height: 1.15;
+margin: 10px 4px;
+padding: 10px 21px;
+text-align: center;
+text-transform: capitalize;
+transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+touch-action: manipulation;
+justify-content: space-between;
 }
 
 ul{
-  list-style-type:none;
+list-style-type:none;
 }
 
-.navbar {
-display: flex;
-}
+
 
 .container {
-  text-align: center;
-  align-items: center;
-  margin-top: 5rem;
+text-align: center;
+align-items: center;
+margin-top: 5rem;
 }
 
 .pokemon-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+align-items: center;
+margin: 10px 4px;
 }
 
-@media all and (max-width : 500px) {
-  .button {
-    width: 10rem;
-    font-size: 0.7rem;
-  }
-
-}

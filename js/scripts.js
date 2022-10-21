@@ -26,6 +26,33 @@ function addListItem(pokemon){
     });
 }
 
+  function showModal(item) {
+    const modalBody = $(".modal-body");
+    const modalTitle = $(".modal-title");
+    modalTitle.empty();
+    modalBody.empty();
+
+    //creating element for name in modal content
+    const pokemonName = $("<h1>" + item.name + "</h1>");
+    // // creating img in modal content
+    const pokemonImage = $('<img class="modal-img" style="width:60%">');
+    pokemonImage.attr("src", item.imageUrl);
+    // //creating element for height in modal content
+    const pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
+    // //creating element for weight in modal content
+    const pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
+    // //creating element for type in modal content
+    const pokemonTypes = $("<p>" + "Types: " + item.types + "</p>");
+    
+
+    modalTitle.append(pokemonName);
+    modalBody.append(pokemonImage);
+    modalBody.append(pokemonHeight);
+    modalBody.append(pokemonWeight);
+    modalBody.append(pokemonTypes);
+  }
+
+  
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
@@ -51,7 +78,10 @@ function loadDetails(item) {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.weight = details.weight;
-      item.types = details.types;
+      item.types = [];
+        for (var i = 0; i < details.types.length; i++) {
+          item.types.push(" "+ details.types[i].type.name);
+        }
     }).catch(function (e) {
       console.error(e);
     });
@@ -59,7 +89,8 @@ function loadDetails(item) {
 
 function showDetails(pokemon){
     loadDetails(pokemon).then(function () {
-    showModal(pokemon);
+    showModal(pokemon)
+
   });
   }
 
