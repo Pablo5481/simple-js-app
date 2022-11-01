@@ -11,20 +11,18 @@ function getAll() {
 }
 
 function addListItem(pokemon){
-    const pokemonList = document.querySelector(".pokemon-list");
-    const listPokemon = document.createElement("li");
-    const button = document.createElement("button");
+    const pokemonList = document.querySelector('.pokemon-list');
+    const listPokemon = document.createElement('li');
+    const button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add("button");
+    button.classList.add('button');
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '#pokemon-modal')
-    button.classList.add("btn")
+    button.classList.add('btn')
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
-    button.addEventListener('click',function(event){
-      showDetails(pokemon);
-    });
-}
+    };
+
 
   function showModal(item) {
     const modalBody = $(".modal-body");
@@ -33,16 +31,16 @@ function addListItem(pokemon){
     modalBody.empty();
 
     //creating element for name in modal content
-    const pokemonName = $("<h1>" + item.name + "</h1>");
+    const pokemonName = $('<h1>' + item.name + '</h1>');
     // // creating img in modal content
     const pokemonImage = $('<img class="modal-img" style="width:60%">');
-    pokemonImage.attr("src", item.imageUrl);
+    pokemonImage.attr('src', item.imageUrl);
     // //creating element for height in modal content
-    const pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
+    const pokemonHeight = $('<p>' + 'Height: ' + item.height + '</p>');
     // //creating element for weight in modal content
-    const pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
+    const pokemonWeight = $('<p>' + 'Weight: ' + item.weight + '</p>');
     // //creating element for type in modal content
-    const pokemonTypes = $("<p>" + "Types: " + item.types + "</p>");
+    const pokemonTypes = $('<p>' + 'Types: ' + item.types + '</p>');
     
 
     modalTitle.append(pokemonName);
