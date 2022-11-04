@@ -25,8 +25,8 @@ function addListItem(pokemon){
 
 
   function showModal(item) {
-    const modalBody = $(".modal-body");
-    const modalTitle = $(".modal-title");
+    const modalBody = $('.modal-body');
+    const modalTitle = $('.modal-title');
     modalTitle.empty();
     modalBody.empty();
 
@@ -78,7 +78,7 @@ function loadDetails(item) {
       item.weight = details.weight;
       item.types = [];
         for (var i = 0; i < details.types.length; i++) {
-          item.types.push(" "+ details.types[i].type.name);
+          item.types.push(' '+ details.types[i].type.name);
         }
     }).catch(function (e) {
       console.error(e);
