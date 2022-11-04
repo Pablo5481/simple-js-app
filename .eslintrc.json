@@ -2,8 +2,18 @@
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+
     "extends": [
         "eslint:recommended"
-    ]
+    ],
 
+    "env": {
+        "browser": true,
+        "node": true
+    },
+
+    "id-match": [
+        "error", 
+        "^[a-z]+([A-Z][a-z]+)*$"
+    ]
 }

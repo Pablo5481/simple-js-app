@@ -21,7 +21,7 @@ function addListItem(pokemon){
     button.classList.add('btn')
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
-    };
+    }
 
 
   function showModal(item) {
